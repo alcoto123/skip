@@ -13,4 +13,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var target = document.querySelector('main section') || document.querySelector('main');
   if (target) target.appendChild(btn);
+
+  // Mobile navigation toggle
+  var navToggle = document.querySelector('.nav-toggle');
+  var navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function () {
+      var expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      navLinks.classList.toggle('open');
+    });
+
+    // Close nav when a link is clicked (on mobile)
+    navLinks.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A' && navLinks.classList.contains('open')) {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 });
