@@ -45,7 +45,7 @@ body {
   .nav-links a { color: #24292f; padding: 0.5rem 1rem; display: block; }
 }
 
-.hero { text-align: center; max-width: 720px; margin: 0 auto; }
+.hero { display: grid; grid-template-columns: 1fr; gap: 1rem; align-items: center; text-align: center; max-width: 720px; margin: 0 auto; }\n.hero-image { width: 100%; max-width: 520px; height: auto; border-radius: 12px; box-shadow: 0 8px 30px rgba(2,6,23,0.08); margin: 0 auto; }
 .hero h1 { margin: 0 0 0.5rem; font-size: 2rem; }
 .lead { margin: 0 0 1rem; color: rgba(255,255,255,0.9); }
 .btn { background: #fff; color: var(--accent); padding: 0.6rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
